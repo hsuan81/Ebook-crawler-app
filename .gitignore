@@ -1,5 +1,6 @@
 # OS or Editor folders
 .DS_Store
+output/
 
 # Numerous always-ignore extensions
 *.epub
