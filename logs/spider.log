@@ -4417,3 +4417,6 @@
 2023-08-13 08:32:28,971 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com#header
 2023-08-13 08:32:29,224 - __main__ - INFO - Creating EPUB file.
 2023-08-13 08:32:39,913 - __main__ - INFO - Ebook creation process completed.
+2023-09-04 22:51:10,943 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2023-09-04 22:51:10] "GET /index.html HTTP/1.1" 200 1190 0.004746
+2023-09-04 22:51:11,043 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2023-09-04 22:51:11] "GET /eel.js HTTP/1.1" 200 6027 0.000241
+2023-09-04 22:51:11,817 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2023-09-04 22:51:11] "GET /favicon.ico HTTP/1.1" 404 876 0.009445
