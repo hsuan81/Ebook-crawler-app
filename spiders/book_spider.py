@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import logging
+import io
 import os
 from ebooklib import epub
 
@@ -15,6 +16,8 @@ logger = logging.getLogger(__name__)
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 }
+
+MAX_SIZE = 2 * 1024 * 1024
 
 
 def fetch_book_info(book_url):
@@ -62,10 +65,51 @@ def fetch_chapter_content(chapter_url):
     return result
 
 
+def get_chapter_size(chapter):
+    book_temp = epub.EpubBook()
+    book_temp.add_item(chapter)
+    buffer = io.BytesIO()
+    epub.write_epub(buffer, book_temp, {})
+    size = buffer.tell()
+    buffer.close()
+    return size
+
+
+def save_epub(path, epub_chapters, book):
+    # Add navigation files
+    book.toc = epub_chapters
+    book.add_item(epub.EpubNcx())
+    book.add_item(epub.EpubNav())
+
+    # Define CSS style
+    style = 'body { font-family: Times, Times New Roman, serif; }'
+    nav_css = epub.EpubItem(
+        uid="style_nav", file_name="style/nav.css", media_type="text/css", content=style)
+    book.add_item(nav_css)
+
+    # Create spine
+    book.spine = ['nav'] + epub_chapters
+
+    # Write to EPUB file
+    epub.write_epub(path, book, {})
+
+
 def create_epub(book_info, chapters):
     logger.info("Creating EPUB file.")
+
+    # Set the output path
+    output_dir = './output/'
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    path = os.path.abspath(output_dir)
+
+    # Set the counter of the book to create
+    book_counter = 1
+    current_size = 0
+
+    # Set the book info
     book = epub.EpubBook()
-    book.set_identifier('sample123456')
+    book.set_identifier(book_info['book_title']+book_counter)
     book.set_title(book_info['book_title'])
     book.add_author(book_info['book_author'])
     book.set_language('zh')
@@ -73,38 +117,48 @@ def create_epub(book_info, chapters):
     # Adding chapters to the book
     epub_chapters = []
     for title, content in chapters:
+        chapter_size = get_chapter_size(content)
+        if current_size + chapter_size > MAX_SIZE:
+            # epub.write_epub(
+            # path + f'/{book_info["book_title"]}({book_counter}).epub', book, {})
+            save_epub(
+                path + f'/{book_info["book_title"]}({book_counter}).epub', epub_chapters, book)
+            book_counter += 1
+            book = epub.EpubBook()
+            book.set_identifier(book_info['book_title']+book_counter)
+            book.set_title(book_info['book_title'])
+            book.add_author(book_info['book_author'])
+            book.set_language('zh')
+            epub_chapters = []
+            current_size = 0
         content = f'<h1>{title}</h1><p>{content}</p>'
         c = epub.EpubHtml(title=title, file_name=title +
                           '.xhtml', content=content)
         book.add_item(c)
         epub_chapters.append(c)
+        current_size += chapter_size
 
     # # Add navigation files
-    book.toc = epub_chapters
-    book.add_item(epub.EpubNcx())
-    book.add_item(epub.EpubNav())
+    # book.toc = epub_chapters
+    # book.add_item(epub.EpubNcx())
+    # book.add_item(epub.EpubNav())
 
     # # Define CSS style
-    style = 'body { font-family: Times, Times New Roman, serif; }'
-    nav_css = epub.EpubItem(
-        uid="style_nav", file_name="style/nav.css", media_type="text/css", content=style)
-    book.add_item(nav_css)
 
     # # Create spine
-    book.spine = ['nav'] + epub_chapters
+
     # Compile the book
-    output_dir = './output/'
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    path = os.path.abspath(output_dir)
-    print(path)
-    epub.write_epub(path + f'/{book_info["book_title"]}.epub', book, {})
+
+    if book.items:
+        save_epub(
+            path + f'/{book_info["book_title"]}({book_counter}).epub', epub_chapters, book)
 
 
-def main():
+def main(callback=None):
     book_url = 'https://m.bqg9527.com/zh_hant/book/118028/'
     book_info = fetch_book_info(book_url)
     chapters_info = fetch_chapters_list(book_url)
+    total_chapters = len(chapters_info)
     chapters = []
     # # Testing
     # for n in range(10):
@@ -114,9 +168,15 @@ def main():
     #     chapters.append((title, content))
 
     # Production
-    for title, url in chapters_info:
+    for idx, (title, url) in enumerate(chapters_info):
         content = fetch_chapter_content(url)
         chapters.append((title, content))
+
+        # 這裡使用回調函數來更新進度
+        if callback:
+            progress = ((idx + 1) / total_chapters) * 100  # 計算進度百分比
+            callback(
+                f"Downloading chapter {idx+1} of {total_chapters}, {progress:.2f}% complete")
 
     create_epub(book_info, chapters)
     # create_epub('Sample eBook', chapters)
