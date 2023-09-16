@@ -36,7 +36,8 @@ def fetch_chapters_list(book_url):
     soup = BeautifulSoup(response.text, 'lxml')
     # chapter_tags = soup.find_all('ul', attrs={'id': None, 'class': 'chapter'})
 
-    chapter_tags = soup.select('ul.chapter > li > a')
+    chapter_tags = soup.select(
+        'ul.chapter[id!="last12"] > li > a[href!="#header"]')
     # print(chapter_tags)
     chapters = []
     for tag in chapter_tags:
@@ -154,7 +155,7 @@ def create_epub(book_info, chapters):
             path + f'/{book_info["book_title"]}({book_counter}).epub', epub_chapters, book)
 
 
-def main(callback=None):
+def main(params, callback=None):
     book_url = 'https://m.bqg9527.com/zh_hant/book/118028/'
     book_info = fetch_book_info(book_url)
     chapters_info = fetch_chapters_list(book_url)
@@ -186,5 +187,27 @@ def main(callback=None):
 if __name__ == '__main__':
     try:
         main()
+        # For Testing
+        # print("Start")
+        # html = """
+        # <html>
+        # <head></head>
+        # <body>
+        # <ul id="last12" class="chapter">
+        # <li><a href="/zh_hant/book/118028/209265592.html">第2874章 送給公子的禮物<span></span></a></li>
+        # </ul>
+        # <ul class="chapter">
+        # <li><a href="/zh_hant/book/118028/209265592.html">第2874章 送給公子的禮物<span></span></a></li>
+        # <li><a href="#header" style="color:#1676a7;">==&gt;返回頂部</a></li>
+        # </ul>
+        # </body>
+        # </html>
+        # """
+        # soup = BeautifulSoup(html, 'lxml')
+        # print("setup soup")
+        # print(soup.select(
+        #     'ul.chapter[id!="last12"] > li > a[href!="#header"]'
+        # ))
+
     except Exception as e:
         logger.error(f"An error occurred: {e}")

@@ -4420,3 +4420,8 @@
 2023-09-04 22:51:10,943 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2023-09-04 22:51:10] "GET /index.html HTTP/1.1" 200 1190 0.004746
 2023-09-04 22:51:11,043 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2023-09-04 22:51:11] "GET /eel.js HTTP/1.1" 200 6027 0.000241
 2023-09-04 22:51:11,817 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2023-09-04 22:51:11] "GET /favicon.ico HTTP/1.1" 404 876 0.009445
+2023-09-16 10:56:58,041 - __main__ - ERROR - An error occurred: Couldn't find a tree builder with the features you requested: html5lib. Do you need to install a parser library?
+2023-09-16 10:57:26,355 - __main__ - ERROR - An error occurred: Couldn't find a tree builder with the features you requested: html5lib. Do you need to install a parser library?
+2023-09-16 10:57:49,884 - __main__ - ERROR - An error occurred: Couldn't find a tree builder with the features you requested: html5lib. Do you need to install a parser library?
+2023-09-16 10:58:07,959 - __main__ - ERROR - An error occurred: Couldn't find a tree builder with the features you requested: html5lib. Do you need to install a parser library?
+2023-09-16 10:58:50,644 - __main__ - ERROR - An error occurred: Couldn't find a tree builder with the features you requested: html5lib. Do you need to install a parser library?
