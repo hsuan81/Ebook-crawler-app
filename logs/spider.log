@@ -4425,3 +4425,143 @@
 2023-09-16 10:57:49,884 - __main__ - ERROR - An error occurred: Couldn't find a tree builder with the features you requested: html5lib. Do you need to install a parser library?
 2023-09-16 10:58:07,959 - __main__ - ERROR - An error occurred: Couldn't find a tree builder with the features you requested: html5lib. Do you need to install a parser library?
 2023-09-16 10:58:50,644 - __main__ - ERROR - An error occurred: Couldn't find a tree builder with the features you requested: html5lib. Do you need to install a parser library?
+2023-10-08 17:18:44,911 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 14:43:43,008 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 14:45:04,532 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 14:54:57,249 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 14:55:16,457 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 14:55:16,464 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 14:57:15,897 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 14:57:15,905 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 14:58:16,859 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 14:58:16,866 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 14:59:37,195 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 14:59:37,202 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 15:00:42,584 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 15:00:42,587 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-10 15:00:42,594 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 15:03:06,960 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 15:03:06,969 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 15:10:38,830 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 15:10:38,839 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-10 15:10:38,841 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 15:12:59,046 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 15:12:59,055 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-10 15:12:59,057 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 18:17:28,055 - __main__ - INFO - Fetching book info from URL: https://m.bqg9527.com/zh_hant/book/118028/
+2023-10-10 18:17:29,715 - __main__ - INFO - Fetching chapters list from URL: https://m.bqg9527.com/zh_hant/book/118028/
+2023-10-10 18:17:31,061 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397177.html
+2023-10-10 18:17:32,970 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397178.html
+2023-10-10 18:17:33,904 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397179.html
+2023-10-10 18:17:34,821 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397180.html
+2023-10-10 18:17:35,778 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397181.html
+2023-10-10 18:17:36,709 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397183.html
+2023-10-10 18:17:37,664 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397184.html
+2023-10-10 18:17:38,607 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397185.html
+2023-10-10 18:17:39,561 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397187.html
+2023-10-10 18:17:40,529 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397190.html
+2023-10-10 18:17:41,458 - __main__ - INFO - Creating EPUB file.
+2023-10-10 18:17:41,482 - __main__ - INFO - Ebook creation process completed.
+2023-10-10 18:21:08,896 - __main__ - INFO - Fetching book info from URL: https://m.bqg9527.com/zh_hant/book/118028/
+2023-10-10 18:21:10,548 - __main__ - INFO - Fetching chapters list from URL: https://m.bqg9527.com/zh_hant/book/118028/
+2023-10-10 18:21:11,916 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397177.html
+2023-10-10 18:21:12,916 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397178.html
+2023-10-10 18:21:13,855 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397179.html
+2023-10-10 18:21:14,795 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397180.html
+2023-10-10 18:21:15,749 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397181.html
+2023-10-10 18:21:16,717 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397183.html
+2023-10-10 18:21:17,644 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397184.html
+2023-10-10 18:21:18,570 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397185.html
+2023-10-10 18:21:19,563 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397187.html
+2023-10-10 18:21:20,503 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397190.html
+2023-10-10 18:21:21,465 - __main__ - INFO - Creating EPUB file.
+2023-10-10 18:21:21,483 - __main__ - INFO - Saving EPUB file.
+2023-10-10 18:21:21,492 - __main__ - INFO - Epub file is saved at /Users/hsuan/Documents/Github/上門龍婿(0).epub/上門龍婿(0).epub.
+2023-10-10 18:21:21,492 - __main__ - INFO - Ebook creation process completed.
+2023-10-10 18:38:23,546 - __main__ - INFO - Fetching book info from URL: https://m.bqg9527.com/zh_hant/book/118028/
+2023-10-10 18:38:24,902 - __main__ - INFO - Fetching chapters list from URL: https://m.bqg9527.com/zh_hant/book/118028/
+2023-10-10 18:38:26,890 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397177.html
+2023-10-10 18:38:27,844 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397178.html
+2023-10-10 18:38:28,788 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397179.html
+2023-10-10 18:38:29,702 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397180.html
+2023-10-10 18:38:30,642 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397181.html
+2023-10-10 18:38:31,541 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397183.html
+2023-10-10 18:38:32,488 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397184.html
+2023-10-10 18:38:33,432 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397185.html
+2023-10-10 18:38:34,344 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397187.html
+2023-10-10 18:38:35,267 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397190.html
+2023-10-10 18:38:36,203 - __main__ - INFO - Creating EPUB file.
+2023-10-10 18:38:36,218 - __main__ - INFO - Saving EPUB file.
+2023-10-10 18:38:36,229 - __main__ - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/上門龍婿(1).epub/上門龍婿(1).epub.
+2023-10-10 18:38:36,229 - __main__ - INFO - Ebook creation process completed.
+2023-10-10 18:41:27,101 - __main__ - INFO - Fetching book info from URL: https://m.bqg9527.com/zh_hant/book/118028/
+2023-10-10 18:41:28,376 - __main__ - INFO - Fetching chapters list from URL: https://m.bqg9527.com/zh_hant/book/118028/
+2023-10-10 18:41:30,163 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397177.html
+2023-10-10 18:41:31,109 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397178.html
+2023-10-10 18:41:33,013 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397179.html
+2023-10-10 18:41:33,926 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397180.html
+2023-10-10 18:41:34,837 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397181.html
+2023-10-10 18:41:35,742 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397183.html
+2023-10-10 18:41:36,755 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397184.html
+2023-10-10 18:41:37,682 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397185.html
+2023-10-10 18:41:38,601 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397187.html
+2023-10-10 18:41:39,565 - __main__ - INFO - Fetching content from chapter URL: https://m.bqg9527.com/zh_hant/book/118028/51397190.html
+2023-10-10 18:41:40,492 - __main__ - INFO - Creating EPUB file.
+2023-10-10 18:41:40,507 - __main__ - INFO - Saving EPUB file.
+2023-10-10 18:41:40,517 - __main__ - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/上門龍婿(1).epub.
+2023-10-10 18:41:40,517 - __main__ - INFO - Ebook creation process completed.
+2023-10-10 18:44:06,852 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 18:45:50,417 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 18:45:50,424 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-10 18:45:50,426 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-10 18:45:50,426 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-10 18:45:50,428 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 18:47:59,421 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 18:47:59,429 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-10 18:47:59,430 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-10 18:47:59,430 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-10 18:47:59,433 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 18:51:47,162 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 18:51:47,165 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-10 18:51:47,170 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-10 18:51:47,170 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 18:51:47,170 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-10 18:51:47,171 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(2).epub.
+2023-10-10 18:51:47,171 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-10 19:23:53,748 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 19:25:12,554 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 19:25:12,560 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-10 19:25:12,562 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-10 19:25:12,562 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-10 19:25:12,564 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 19:25:12,564 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 19:25:12,565 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-10 19:25:12,566 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-10 19:25:12,566 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 19:25:12,566 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-10 19:25:12,567 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(2).epub.
+2023-10-10 19:25:12,567 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-10 19:26:32,380 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 19:26:32,386 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-10 19:26:32,388 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-10 19:26:32,389 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-10 19:26:32,391 - spiders.book_spider - INFO - Get last chapter title: Title is 第233章 測試用
+2023-10-10 19:26:32,391 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 19:26:32,391 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-10 19:26:32,392 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-10 19:26:32,392 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-10 19:26:32,392 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-10 19:26:32,393 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(2).epub.
+2023-10-10 19:26:32,393 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-10 19:59:30,084 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-10 20:01:33,518 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-10 20:03:08,756 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-10 20:05:03,904 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-10 20:06:41,376 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-10 20:07:21,229 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-10 20:07:52,700 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-11 01:08:46,932 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-11 01:09:47,924 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-11 01:11:34,806 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-11 01:12:54,272 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-11 01:13:27,314 - spiders.book_spider - INFO - EPUB file already up to date
