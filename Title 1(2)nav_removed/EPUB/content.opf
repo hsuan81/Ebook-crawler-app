@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="id" version="3.0" prefix="rendition: http://www.idpf.org/vocab/rendition/#">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+    <meta property="dcterms:modified">2023-10-14T19:37:51Z</meta>
+    <dc:identifier id="id">Title 1[('第2章 測試1-1', &lt;MagicMock name='fetch_one_chapter_content()' id='4417553216'&gt;), ('第33章 測試1-2', &lt;MagicMock name='fetch_one_chapter_content()' id='4417553216'&gt;)]</dc:identifier>
+    <dc:title>Title 1</dc:title>
+    <dc:creator id="creator">Author 1</dc:creator>
+    <dc:language>zh</dc:language>
+    <meta name="generator" content="Ebook-lib 0.18.1"/>
+  </metadata>
+  <manifest>
+    <item href="第33章 測試1-2.xhtml" id="chapter_0" media-type="application/xhtml+xml"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="nav"/>
+    <itemref idref="chapter_0"/>
+  </spine>
+</package>

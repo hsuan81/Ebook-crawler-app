@@ -4565,3 +4565,246 @@
 2023-10-11 01:11:34,806 - spiders.book_spider - INFO - EPUB file already up to date
 2023-10-11 01:12:54,272 - spiders.book_spider - INFO - EPUB file already up to date
 2023-10-11 01:13:27,314 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:00:19,853 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:03:04,547 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:03:31,162 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:04:42,854 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:08:23,024 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:08:52,029 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:09:30,951 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:09:53,692 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:11:30,313 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:12:48,156 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:15:54,238 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:19:37,834 - spiders.book_spider - INFO - Number of chapters to update: 0
+2023-10-12 08:19:37,835 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:21:54,734 - spiders.book_spider - INFO - Last chapter title of the Epub file: 第2章
+2023-10-12 08:21:54,735 - spiders.book_spider - INFO - Latest chapter title from web: 第3章
+2023-10-12 08:21:54,735 - spiders.book_spider - INFO - Number of chapters to update: 0
+2023-10-12 08:21:54,735 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-12 08:27:27,035 - spiders.book_spider - INFO - Last chapter title of the Epub file: 第2章
+2023-10-12 08:27:27,036 - spiders.book_spider - INFO - Latest chapter title from web: 第3章
+2023-10-12 08:27:27,036 - spiders.book_spider - INFO - Type of last title: <class 'str'>
+2023-10-12 08:27:27,036 - spiders.book_spider - INFO - Type of latest title: <class 'str'>
+2023-10-12 08:27:27,036 - spiders.book_spider - INFO - Number of chapters to update: 0
+2023-10-12 08:27:27,036 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-13 07:53:09,501 - spiders.book_spider - INFO - Last chapter title of the Epub file: 第2章
+2023-10-13 07:53:09,501 - spiders.book_spider - INFO - Latest chapter title from web: 第3章
+2023-10-13 07:53:09,501 - spiders.book_spider - INFO - Type of last title: <class 'str'>
+2023-10-13 07:53:09,501 - spiders.book_spider - INFO - Type of latest title: <class 'str'>
+2023-10-13 07:53:09,501 - spiders.book_spider - INFO - Number of chapters to update: 0
+2023-10-13 07:53:09,501 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-13 07:53:40,433 - spiders.book_spider - INFO - Last chapter title of the Epub file: 第2章
+2023-10-13 07:53:40,433 - spiders.book_spider - INFO - Latest chapter title from web: 第3章
+2023-10-13 07:53:40,433 - spiders.book_spider - INFO - Type of last title: <class 'str'>
+2023-10-13 07:53:40,433 - spiders.book_spider - INFO - Type of latest title: <class 'str'>
+2023-10-13 07:53:40,433 - spiders.book_spider - INFO - Number of chapters to update: 0
+2023-10-13 07:53:40,433 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-13 07:55:56,708 - spiders.book_spider - INFO - Last chapter title of the Epub file: 第2章
+2023-10-13 07:55:56,709 - spiders.book_spider - INFO - Latest chapter title from web: 第3章
+2023-10-13 07:55:56,709 - spiders.book_spider - INFO - The two titles are the same: False
+2023-10-13 07:55:56,709 - spiders.book_spider - INFO - The two titles are different: True
+2023-10-13 07:55:56,709 - spiders.book_spider - INFO - Number of chapters to update: 0
+2023-10-13 07:55:56,709 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-13 08:00:45,084 - spiders.book_spider - INFO - Last chapter title of the Epub file: 第2章
+2023-10-13 08:00:45,084 - spiders.book_spider - INFO - Latest chapter title from web: 第3章
+2023-10-13 08:00:45,084 - spiders.book_spider - INFO - The two titles are the same: False
+2023-10-13 08:00:45,084 - spiders.book_spider - INFO - The two titles are different: True
+2023-10-13 08:00:45,084 - spiders.book_spider - INFO - Last chapter match: <re.Match object; span=(1, 2), match='2'>
+2023-10-13 08:00:45,084 - spiders.book_spider - INFO - Latest chapter match: <re.Match object; span=(1, 2), match='2'>
+2023-10-13 08:00:45,084 - spiders.book_spider - INFO - chapter number: 2 vs 2
+2023-10-13 08:00:45,084 - spiders.book_spider - INFO - difference: 0
+2023-10-13 08:00:45,084 - spiders.book_spider - INFO - Number of chapters to update: 0
+2023-10-13 08:00:45,084 - spiders.book_spider - INFO - EPUB file already up to date
+2023-10-13 08:01:48,890 - spiders.book_spider - INFO - Last chapter title of the Epub file: 第2章
+2023-10-13 08:01:48,890 - spiders.book_spider - INFO - Latest chapter title from web: 第3章
+2023-10-13 08:01:48,890 - spiders.book_spider - INFO - The two titles are the same: False
+2023-10-13 08:01:48,890 - spiders.book_spider - INFO - The two titles are different: True
+2023-10-13 08:01:48,890 - spiders.book_spider - INFO - Last chapter match: <re.Match object; span=(1, 2), match='2'>
+2023-10-13 08:01:48,890 - spiders.book_spider - INFO - Latest chapter match: <re.Match object; span=(1, 2), match='3'>
+2023-10-13 08:01:48,890 - spiders.book_spider - INFO - chapter number: 2 vs 3
+2023-10-13 08:01:48,890 - spiders.book_spider - INFO - difference: -1
+2023-10-13 08:01:48,890 - spiders.book_spider - INFO - Number of chapters to update: 1
+2023-10-13 08:03:16,909 - spiders.book_spider - INFO - Last chapter title of the Epub file: 第2章
+2023-10-13 08:03:16,910 - spiders.book_spider - INFO - Latest chapter title from web: 第3章
+2023-10-13 08:03:16,910 - spiders.book_spider - INFO - The two titles are the same: False
+2023-10-13 08:03:16,910 - spiders.book_spider - INFO - The two titles are different: True
+2023-10-13 08:03:16,910 - spiders.book_spider - INFO - Last chapter match: <re.Match object; span=(1, 2), match='2'>
+2023-10-13 08:03:16,910 - spiders.book_spider - INFO - Latest chapter match: <re.Match object; span=(1, 2), match='3'>
+2023-10-13 08:03:16,910 - spiders.book_spider - INFO - chapter number: 2 vs 3
+2023-10-13 08:03:16,910 - spiders.book_spider - INFO - difference: -1
+2023-10-13 08:03:16,910 - spiders.book_spider - INFO - Number of chapters to update: 1
+2023-10-13 08:03:16,923 - spiders.book_spider - INFO - Saving updated EPUB file.
+2023-10-13 08:03:16,928 - spiders.book_spider - INFO - Updated Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-13 08:09:15,463 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-13 08:09:15,466 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-13 08:09:15,472 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-13 08:09:15,472 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-13 08:09:15,472 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-13 08:09:15,473 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(2).epub.
+2023-10-13 08:09:15,473 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-13 08:09:41,472 - spiders.book_spider - INFO - Last chapter title of the Epub file: 第2章
+2023-10-13 08:09:41,472 - spiders.book_spider - INFO - Latest chapter title from web: 第3章
+2023-10-13 08:09:41,472 - spiders.book_spider - INFO - The two titles are the same: False
+2023-10-13 08:09:41,472 - spiders.book_spider - INFO - The two titles are different: True
+2023-10-13 08:09:41,472 - spiders.book_spider - INFO - Last chapter match: <re.Match object; span=(1, 2), match='2'>
+2023-10-13 08:09:41,472 - spiders.book_spider - INFO - Latest chapter match: <re.Match object; span=(1, 2), match='3'>
+2023-10-13 08:09:41,472 - spiders.book_spider - INFO - chapter number: 2 vs 3
+2023-10-13 08:09:41,472 - spiders.book_spider - INFO - difference: -1
+2023-10-13 08:09:41,472 - spiders.book_spider - INFO - Number of chapters to update: 1
+2023-10-13 08:09:41,480 - spiders.book_spider - INFO - Saving updated EPUB file.
+2023-10-13 08:09:41,483 - spiders.book_spider - INFO - Updated Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-13 08:13:36,628 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-13 08:13:36,631 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-13 08:13:36,639 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-13 08:13:36,639 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-13 08:13:36,640 - spiders.book_spider - INFO - Saving EPUB file.
+2023-10-13 08:13:36,643 - spiders.book_spider - INFO - Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(2).epub.
+2023-10-13 08:13:36,643 - spiders.book_spider - INFO - Ebook creation process completed.
+2023-10-13 08:14:16,608 - spiders.book_spider - INFO - Last chapter title of the Epub file: 第2章
+2023-10-13 08:14:16,609 - spiders.book_spider - INFO - Latest chapter title from web: 第3章
+2023-10-13 08:14:16,609 - spiders.book_spider - INFO - The two titles are the same: False
+2023-10-13 08:14:16,609 - spiders.book_spider - INFO - The two titles are different: True
+2023-10-13 08:14:16,609 - spiders.book_spider - INFO - Last chapter match: <re.Match object; span=(1, 2), match='2'>
+2023-10-13 08:14:16,609 - spiders.book_spider - INFO - Latest chapter match: <re.Match object; span=(1, 2), match='3'>
+2023-10-13 08:14:16,609 - spiders.book_spider - INFO - chapter number: 2 vs 3
+2023-10-13 08:14:16,609 - spiders.book_spider - INFO - difference: -1
+2023-10-13 08:14:16,609 - spiders.book_spider - INFO - Number of chapters to update: 1
+2023-10-13 08:14:16,618 - spiders.book_spider - INFO - Saving updated EPUB file.
+2023-10-13 08:14:16,618 - spiders.book_spider - INFO - book spine [('nav', 'yes'), ('chapter_0', 'yes'), <ebooklib.epub.EpubHtml object at 0x106a826a0>]
+2023-10-13 08:14:16,621 - spiders.book_spider - INFO - Updated Epub file is saved at /Users/hsuan/Documents/Github/ebook-crawler-app/Title 1(1).epub.
+2023-10-14 18:06:55,797 - spiders.book_spider - INFO - Getting last chapter id...
+2023-10-14 18:08:23,953 - spiders.book_spider - INFO - Getting last chapter id...
+2023-10-14 18:08:23,954 - spiders.book_spider - INFO - The id of the last chapter is: chapter_0
+2023-10-14 18:08:23,954 - spiders.book_spider - INFO - The id number of the last chapter is: <re.Match object; span=(8, 9), match='0'>
+2023-10-14 18:08:47,648 - spiders.book_spider - INFO - Getting last chapter id...
+2023-10-14 18:08:47,648 - spiders.book_spider - INFO - The id of the last chapter is: chapter_0
+2023-10-14 18:08:47,648 - spiders.book_spider - INFO - The id number of the last chapter is: 0
+2023-10-14 18:54:51,450 - spiders.book_spider - INFO - Getting last chapter id...
+2023-10-14 18:54:51,450 - spiders.book_spider - INFO - The id of the last chapter is: chapter_0
+2023-10-14 18:54:51,450 - spiders.book_spider - INFO - The id number of the last chapter is: 0
+2023-10-14 18:56:00,743 - spiders.book_spider - INFO - Getting last chapter id...
+2023-10-14 18:56:00,744 - spiders.book_spider - INFO - The id of the last chapter is: chapter_0
+2023-10-14 18:56:00,744 - spiders.book_spider - INFO - The id number of the last chapter is: 0
+2023-10-14 18:56:49,326 - spiders.book_spider - INFO - Getting last chapter id...
+2023-10-14 18:56:49,326 - spiders.book_spider - INFO - The id of the last chapter is: chapter_0
+2023-10-14 18:56:49,326 - spiders.book_spider - INFO - The id number of the last chapter is: 0
+2023-10-14 18:57:29,601 - spiders.book_spider - INFO - Getting last chapter id...
+2023-10-14 18:57:29,601 - spiders.book_spider - INFO - The id of the last chapter is: chapter_0
+2023-10-14 18:57:29,601 - spiders.book_spider - INFO - The id number of the last chapter is: 0
+2023-10-14 19:03:42,136 - spiders.book_spider - INFO - Getting last chapter id...
+2023-10-14 19:03:42,137 - spiders.book_spider - INFO - The id of the last chapter is: chapter_0
+2023-10-14 19:03:42,137 - spiders.book_spider - INFO - The id number of the last chapter is: 0
+2023-10-14 19:08:20,994 - spiders.book_spider - INFO - Getting last chapter id...
+2023-10-14 19:08:20,994 - spiders.book_spider - INFO - The id of the last chapter is: chapter_0
+2023-10-14 19:08:20,994 - spiders.book_spider - INFO - The id number of the last chapter is: 0
+2023-10-14 19:09:32,762 - spiders.book_spider - INFO - Getting last chapter id...
+2023-10-14 19:09:32,762 - spiders.book_spider - INFO - The id of the last chapter is: chapter_0
+2023-10-14 19:09:32,762 - spiders.book_spider - INFO - The id number of the last chapter is: 0
+2023-10-14 19:23:56,480 - spiders.book_spider - INFO - Getting last chapter id...
+2023-10-14 19:23:56,481 - spiders.book_spider - INFO - The id of the last chapter is: chapter_0
+2023-10-14 19:23:56,481 - spiders.book_spider - INFO - The id number of the last chapter is: 0
+2023-10-14 19:26:05,695 - spiders.book_spider - INFO - number of nav to remove: 1
+2023-10-14 19:26:05,695 - spiders.book_spider - INFO - number of style to remove: 1
+2023-10-14 19:37:51,056 - spiders.book_spider - INFO - number of ncx to remove: 1
+2023-10-14 19:37:51,056 - spiders.book_spider - INFO - number of style to remove: 1
+2023-10-14 19:37:51,056 - spiders.book_spider - INFO - nav to remove: <EpubNav:nav:nav.xhtml>
+2023-10-16 08:08:29,014 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-16 08:08:29,015 - spiders.book_spider - INFO - Copying spine and content
+2023-10-16 08:08:29,015 - spiders.book_spider - INFO - EPUB file transferring finished.
+2023-10-16 08:11:19,080 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-16 08:11:19,080 - spiders.book_spider - INFO - Copying spine and content
+2023-10-16 08:11:19,080 - spiders.book_spider - INFO - EPUB file transferring finished.
+2023-10-16 08:15:55,916 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-16 08:15:55,917 - spiders.book_spider - INFO - Copying spine and content
+2023-10-16 08:15:55,917 - spiders.book_spider - INFO - EPUB file transferring finished.
+2023-10-16 08:18:18,350 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-16 08:18:18,351 - spiders.book_spider - INFO - Copying spine and content
+2023-10-16 08:18:18,351 - spiders.book_spider - INFO - EPUB file transferring finished.
+2023-10-17 08:31:01,839 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-17 08:31:01,840 - spiders.book_spider - INFO - Copying spine and content
+2023-10-17 08:31:01,840 - spiders.book_spider - INFO - Type of spine item: <class 'tuple'>
+2023-10-17 08:31:01,840 - spiders.book_spider - INFO - Type of spine item: <class 'tuple'>
+2023-10-17 08:31:01,840 - spiders.book_spider - INFO - Type of spine item: <class 'tuple'>
+2023-10-17 08:31:01,840 - spiders.book_spider - INFO - Type of spine item: <class 'tuple'>
+2023-10-17 08:31:01,840 - spiders.book_spider - INFO - EPUB file transferring finished.
+2023-10-17 08:36:41,606 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-17 08:36:41,607 - spiders.book_spider - INFO - Copying spine and content
+2023-10-17 08:36:41,607 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 08:36:41,607 - spiders.book_spider - INFO - Item id: nav
+2023-10-17 08:36:41,607 - spiders.book_spider - INFO - Chapter: <EpubNav:nav:nav.xhtml>
+2023-10-17 08:36:41,609 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 08:36:41,609 - spiders.book_spider - INFO - Item id: chapter_0
+2023-10-17 08:36:41,609 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_0:intro.xhtml>
+2023-10-17 08:36:41,609 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 08:36:41,609 - spiders.book_spider - INFO - Item id: chapter_1
+2023-10-17 08:36:41,609 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_1:about.xhtml>
+2023-10-17 08:36:41,609 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 08:36:41,609 - spiders.book_spider - INFO - Item id: chapter_2
+2023-10-17 08:36:41,609 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_2:chap23.xhtml>
+2023-10-17 08:36:41,609 - spiders.book_spider - INFO - EPUB file transferring finished.
+2023-10-17 08:49:44,585 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-17 08:49:44,586 - spiders.book_spider - INFO - Copying spine and content
+2023-10-17 08:49:44,586 - spiders.book_spider - INFO - Spine item: ('nav', 'yes')
+2023-10-17 08:49:44,586 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 08:49:44,586 - spiders.book_spider - INFO - Item id: chapter_0
+2023-10-17 08:49:44,586 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_0:intro.xhtml>
+2023-10-17 08:49:44,588 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 08:49:44,588 - spiders.book_spider - INFO - Item id: chapter_1
+2023-10-17 08:49:44,588 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_1:about.xhtml>
+2023-10-17 08:49:44,588 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 08:49:44,588 - spiders.book_spider - INFO - Item id: chapter_2
+2023-10-17 08:49:44,588 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_2:chap23.xhtml>
+2023-10-17 08:49:44,588 - spiders.book_spider - INFO - EPUB file transferring finished.
+2023-10-17 22:57:47,685 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-17 22:57:47,685 - spiders.book_spider - INFO - Copying spine and content
+2023-10-17 22:57:47,685 - spiders.book_spider - INFO - Spine item: ('nav', 'yes')
+2023-10-17 22:57:47,685 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 22:57:47,685 - spiders.book_spider - INFO - Item id: chapter_0
+2023-10-17 22:57:47,685 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_0:intro.xhtml>
+2023-10-17 22:57:47,688 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 22:57:47,688 - spiders.book_spider - INFO - Item id: chapter_1
+2023-10-17 22:57:47,688 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_1:about.xhtml>
+2023-10-17 22:57:47,688 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 22:57:47,688 - spiders.book_spider - INFO - Item id: chapter_2
+2023-10-17 22:57:47,688 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_2:chap23.xhtml>
+2023-10-17 22:57:47,688 - spiders.book_spider - INFO - EPUB file transferring finished.
+2023-10-17 22:58:43,193 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-17 22:58:43,194 - spiders.book_spider - INFO - Copying spine and content
+2023-10-17 22:58:43,194 - spiders.book_spider - INFO - Spine item: ('nav', 'yes')
+2023-10-17 22:58:43,194 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 22:58:43,194 - spiders.book_spider - INFO - Item id: chapter_0
+2023-10-17 22:58:43,194 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_0:intro.xhtml>
+2023-10-17 22:58:43,196 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 22:58:43,196 - spiders.book_spider - INFO - Item id: chapter_1
+2023-10-17 22:58:43,196 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_1:about.xhtml>
+2023-10-17 22:58:43,196 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 22:58:43,196 - spiders.book_spider - INFO - Item id: chapter_2
+2023-10-17 22:58:43,196 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_2:chap23.xhtml>
+2023-10-17 22:58:43,196 - spiders.book_spider - INFO - EPUB file transferring finished.
+2023-10-17 23:00:33,263 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-17 23:00:33,263 - spiders.book_spider - INFO - Copying spine and content
+2023-10-17 23:00:33,264 - spiders.book_spider - INFO - Spine item: ('nav', 'yes')
+2023-10-17 23:00:33,264 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 23:00:33,264 - spiders.book_spider - INFO - Item id: chapter_0
+2023-10-17 23:00:33,264 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_0:intro.xhtml>
+2023-10-17 23:00:33,266 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 23:00:33,266 - spiders.book_spider - INFO - Item id: chapter_1
+2023-10-17 23:00:33,266 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_1:about.xhtml>
+2023-10-17 23:00:33,266 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 23:00:33,266 - spiders.book_spider - INFO - Item id: chapter_2
+2023-10-17 23:00:33,266 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_2:chap23.xhtml>
+2023-10-17 23:00:33,266 - spiders.book_spider - INFO - EPUB file transferring finished.
+2023-10-17 23:07:05,348 - spiders.book_spider - INFO - Creating EPUB file.
+2023-10-17 23:07:05,349 - spiders.book_spider - INFO - Copying spine and content
+2023-10-17 23:07:05,349 - spiders.book_spider - INFO - Spine item: ('nav', 'yes')
+2023-10-17 23:07:05,349 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 23:07:05,349 - spiders.book_spider - INFO - Item id: chapter_0
+2023-10-17 23:07:05,349 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_0:intro.xhtml>
+2023-10-17 23:07:05,351 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 23:07:05,351 - spiders.book_spider - INFO - Item id: chapter_1
+2023-10-17 23:07:05,351 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_1:about.xhtml>
+2023-10-17 23:07:05,351 - spiders.book_spider - INFO - EpubHtml found.
+2023-10-17 23:07:05,351 - spiders.book_spider - INFO - Item id: chapter_2
+2023-10-17 23:07:05,351 - spiders.book_spider - INFO - Chapter: <EpubHtml:chapter_2:chap23.xhtml>
+2023-10-17 23:07:05,351 - spiders.book_spider - INFO - EPUB file transferring finished.
