@@ -2,7 +2,7 @@
 .DS_Store
 output/
 build/
-dist/
+dist/*
 
 # Numerous always-ignore extensions
 *.epub
