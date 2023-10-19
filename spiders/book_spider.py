@@ -19,19 +19,8 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 }
 
-MAX_SIZE = 2 * 1024 * 1024
+MAX_SIZE = 3 * 1024 * 1024
 
-def append_chapters_to_epub(epub_path, new_chapters):
-    book = epub.read_epub(epub_path)
-    
-    # 循環添加新章節
-    for title, content in new_chapters:
-        c = epub.EpubHtml(title=title, file_name=f"{title}.xhtml", lang="hr")
-        c.content = f'<h1>{title}</h1><p>{content}</p>'
-        book.add_item(c)
-    
-    # 重新保存書籍
-    epub.write_epub(epub_path, book)
 
 
 def fetch_book_info(book_url):
@@ -138,7 +127,6 @@ def get_latest_chapter_from_web(book_url):
     latest_chapter = soup.select_one('p:-soup-contains("最新") a').text
     return latest_chapter
 
-
 def calculate_chapters_to_update(book_url, path):
     last_title = get_last_chapter_title_epub(path)
     latest_title = get_latest_chapter_from_web(book_url)
@@ -147,8 +135,8 @@ def calculate_chapters_to_update(book_url, path):
     logger.info(f"The two titles are the same: {last_title == latest_title}")
     logger.info(f"The two titles are different: {last_title != latest_title}")
     if last_title != latest_title:
+        
         # parse to get number and calculate how many chapters need to be added
-        # 使用正则表达式找到数字
         last_chapter_match = re.search(r'\d+', last_title)
         latest_chapter_match = re.search(r'\d+', latest_title)
         logger.info(f"Last chapter match: {last_chapter_match}")
@@ -167,79 +155,7 @@ def calculate_chapters_to_update(book_url, path):
                 "Calculate chapters to update: No chapter number found.")
     else:
         return 0
-
-def remove_nav_and_style_items(book):
-    # 使用get_items_of_type()找到特定类型的所有项
-    ncx_to_remove = list(book.get_items_of_type(ITEM_NAVIGATION))
-    style_to_remove = list(book.get_items_of_type(ITEM_STYLE))
-    nav_to_remove = book.get_item_with_id('nav')
-    items_to_remove = ncx_to_remove + style_to_remove
-
-    if nav_to_remove:
-        items_to_remove.append(nav_to_remove)
-
-    logger.info(f"number of ncx to remove: {len(ncx_to_remove)}")
-    logger.info(f"number of style to remove: {len(style_to_remove)}")
-    logger.info(f"nav to remove: {nav_to_remove}")
-
-    # 如果找到了要删除的项
-    if items_to_remove:
-        # 从书的items列表中删除它们
-        for item in items_to_remove:
-            if item in book.items:
-                book.items.remove(item)
-
-
-def save_epub(output_path, epub_chapters, book_info, book, book_counter):
-    logger.info("Saving EPUB file.")
-    output_dir = output_path
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    path = os.path.abspath(output_dir) + f'/{book_info["book_title"]}({book_counter}).epub'
-    # Add navigation files
-    book.toc = epub_chapters
-    book.add_item(epub.EpubNcx())
-    book.add_item(epub.EpubNav())
-
-    # Define CSS style
-    style = 'body { font-family: Times, Times New Roman, serif; }'
-    nav_css = epub.EpubItem(
-        uid="style_nav", file_name="style/nav.css", media_type="text/css", content=style)
-    book.add_item(nav_css)
-
-    # Create spine
-    book.spine = ['nav'] + epub_chapters
-
-    # Write to EPUB file
-    epub.write_epub(path, book)
-    logger.info(f"Epub file is saved at {path}.")
-
-def save_updated_epub(output_path, epub_chapters, book_info, book, book_counter):
-    logger.info("Saving updated EPUB file.")
-    output_dir = output_path
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    path = os.path.abspath(output_dir) + f'/{book_info["book_title"]}({book_counter}).epub'
-
-    # Add navigation files
-    book.toc += epub_chapters
-    book.add_item(epub.EpubNcx())
-    book.add_item(epub.EpubNav())
-
-    # Define CSS style
-    style = 'body { font-family: Times, Times New Roman, serif; }'
-    nav_css = epub.EpubItem(
-        uid="style_nav", file_name="style/nav.css", media_type="text/css", content=style)
-    book.add_item(nav_css)
-
-    # Update spine
-    book.spine += epub_chapters
-    logger.info(f"book spine {book.spine}")
     
-
-    # Write to EPUB file
-    epub.write_epub(path, book)
-    logger.info(f"Updated Epub file is saved at {path}.")
 
 
 def create_epub(book_info, book_count=1):
@@ -253,70 +169,6 @@ def create_epub(book_info, book_count=1):
     book.set_language('zh')
 
     return book
-
-
-def get_epub(book_url, epub_path, callback=None):
-    book_info = fetch_book_info(book_url)
-    chapters_info = fetch_chapters_list(book_url)
-    total_chapters = len(chapters_info)
-    chapters = []
-    # # Testing
-    # for n in range(10):
-    #     title = chapters_info[n][0]
-    #     url = chapters_info[n][1]
-    #     content = fetch_one_chapter_content(url)
-    #     chapters.append((title, content))
-
-    # # Production
-    for idx, (title, url) in enumerate(chapters_info):
-        content = fetch_one_chapter_content(url)
-        chapters.append((title, content))
-
-        # Use callback function to update progress for display on the client side
-        if callback:
-            progress = ((idx + 1) / total_chapters) * 100  # calculate the Ebook complete percentage
-            callback(
-                f"Downloading chapter {idx+1} of {total_chapters}, {progress:.2f}% complete")
-
-    
-    current_size = 0
-    book_count = 1
-    epub_chapters = []
-    book = create_epub(book_info, book_count)
-    for title, content in chapters:
-        chapter_size = get_chapter_size(content)
-        if current_size + chapter_size > MAX_SIZE:
-            save_epub(epub_path, epub_chapters, book_info, book, book_count)
-            book_count += 1
-            book = create_epub(book_info, chapters)
-            epub_chapters = []
-            current_size = 0
-        content = f'<h1>{title}</h1><p>{content}</p>'
-        c = epub.EpubHtml(title=title, file_name=title +
-                        '.xhtml')
-        c.content = content
-        book.add_item(c)
-        epub_chapters.append(c)
-        current_size += chapter_size
-    
-    save_epub(epub_path, epub_chapters, book_info, book, book_count)
-    
-
-    logger.info("Ebook creation process completed.")
-
-def get_chapters_in_order(epub_book: 'EpubBook') -> tuple[list, list] :
-    ordered_chapters = []
-    ordered_chapter_spine = []
-
-    # Traverse spine to get id of items in order as the toc of the book
-    for item_id in epub_book.spine:
-        item = epub_book.get_item_with_id(item_id)
-        # Only retrieve chapter content with type of EpubHtml
-        if item and isinstance(item, epub.EpubHtml):  
-            ordered_chapters.append(item)
-            ordered_chapter_spine.append(item)
-
-    return ordered_chapters, ordered_chapter_spine
 
 
 def create_and_transfer_from_old_book(old_book: 'EpubBook', book_info, book_count) -> 'EpubBook':
@@ -365,15 +217,127 @@ def create_and_transfer_from_old_book(old_book: 'EpubBook', book_info, book_coun
 
     return new_book
 
+
+def save_epub(output_path, epub_chapters, book_info, book, book_counter):
+    logger.info("Saving EPUB file.")
+    output_dir = output_path
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    path = os.path.abspath(output_dir) + f'/{book_info["book_title"]}({book_counter}).epub'
+    # Add navigation files
+    book.toc = epub_chapters
+    book.add_item(epub.EpubNcx())
+    book.add_item(epub.EpubNav())
+
+    # Define CSS style
+    style = 'body { font-family: Times, Times New Roman, serif; }'
+    nav_css = epub.EpubItem(
+        uid="style_nav", file_name="style/nav.css", media_type="text/css", content=style)
+    book.add_item(nav_css)
+
+    # Create spine
+    book.spine = ['nav'] + epub_chapters
+
+    # Write to EPUB file
+    epub.write_epub(path, book)
+    logger.info(f"Epub file is saved at {path}.")
+
+
+def save_updated_epub(output_path, epub_chapters, book_info, book, book_counter):
+    logger.info("Saving updated EPUB file.")
+    output_dir = output_path
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    path = os.path.abspath(output_dir) + f'/{book_info["book_title"]}({book_counter}).epub'
+
+    # Add navigation files
+    book.toc += epub_chapters
+    book.add_item(epub.EpubNcx())
+    book.add_item(epub.EpubNav())
+
+    # Define CSS style
+    style = 'body { font-family: Times, Times New Roman, serif; }'
+    nav_css = epub.EpubItem(
+        uid="style_nav", file_name="style/nav.css", media_type="text/css", content=style)
+    book.add_item(nav_css)
+
+    # Update spine
+    book.spine += epub_chapters
+    logger.info(f"book spine {book.spine}")
     
 
+    # Write to EPUB file
+    epub.write_epub(path, book)
+    logger.info(f"Updated Epub file is saved at {path}.")
 
-def update_epub(book_url, epub_path, input_path):
+
+def get_epub(book_url, epub_path, callback=None):
+    book_info = fetch_book_info(book_url)
+    chapters_info = fetch_chapters_list(book_url)
+    total_chapters = len(chapters_info)
+    chapters = []
+    # # Testing
+    # for n in range(10):
+    #     title = chapters_info[n][0]
+    #     url = chapters_info[n][1]
+    #     content = fetch_one_chapter_content(url)
+    #     chapters.append((title, content))
+
+    # # Production
+    for idx, (title, url) in enumerate(chapters_info):
+        content = fetch_one_chapter_content(url)
+        chapters.append((title, content))
+
+        # Use callback function to update progress for display on the client side
+        if callback:
+            progress = ((idx + 1) / total_chapters) * 100  # calculate the Ebook complete percentage
+            callback(
+                f"Downloading chapter {idx+1} of {total_chapters}, {progress:.2f}% complete")
+
+    
+    current_size = 0
+    book_count = 1
+    epub_chapters = []
+
+    if callback:
+        callback("Creating Ebook...")
+    book = create_epub(book_info, book_count)
+    for title, content in chapters:
+        chapter_size = get_chapter_size(content)
+        if current_size + chapter_size > MAX_SIZE:
+            save_epub(epub_path, epub_chapters, book_info, book, book_count)
+            book_count += 1
+            book = create_epub(book_info, chapters)
+            epub_chapters = []
+            current_size = 0
+        content = f'<h1>{title}</h1><p>{content}</p>'
+        c = epub.EpubHtml(title=title, file_name=title +
+                        '.xhtml')
+        c.content = content
+        book.add_item(c)
+        epub_chapters.append(c)
+        current_size += chapter_size
+    
+    save_epub(epub_path, epub_chapters, book_info, book, book_count)
+    
+    if callback:
+        callback("Ebook completed.")
+
+    logger.info("Ebook creation process completed.")
+
+
+def update_epub(book_url, epub_path, input_path, callback=None):
+    if callback:
+        callback("Checking new chapters...")
+
     number_to_update = calculate_chapters_to_update(book_url, input_path)
     logger.info(f"Number of chapters to update: {number_to_update}")
 
     # Start to update the ebook if new chapters are available on the web
     if number_to_update > 0:
+        if callback:
+            callback("Fetching new chapters...")
+
         chap_list = fetch_chapters_list(book_url)
 
         # Slice the list with only new chapters left
@@ -385,6 +349,8 @@ def update_epub(book_url, epub_path, input_path):
             content = fetch_one_chapter_content(url)
             chap_content_to_update.append((title, content))
         
+        if callback:
+            callback("Updating the Ebook...")
         # Get the size of the source book and book info from it
         current_size = os.stat(input_path).st_size
 
@@ -419,9 +385,14 @@ def update_epub(book_url, epub_path, input_path):
                 # size within limit -> continue to append chapter
 
         save_updated_epub(epub_path, epub_chapters, book_info, book, book_count)
+        logger.info("EPUB file is updated.")
+        if callback:
+            callback("Update completed.")
 
     else:
         logger.info("EPUB file already up to date")
+        if callback:
+            callback("Ebook is already up to date.")
 
 
 
@@ -435,7 +406,7 @@ def main(params, callback=None):
 
     if action == "get":
         logger.info(" Action is: Get Ebook ")
-        get_epub(book_url, epub_path, callback=None)
+        get_epub(book_url, epub_path, callback)
         # book_info = fetch_book_info(book_url)
         # chapters_info = fetch_chapters_list(book_url)
         # total_chapters = len(chapters_info)
@@ -485,7 +456,7 @@ def main(params, callback=None):
 
     elif action == "update":
         logger.info(" Action is: Update Ebook ")
-        update_epub(book_url, epub_path, input_path)
+        update_epub(book_url, epub_path, input_path, callback)
 
         logger.info("Ebook update completed.")
 

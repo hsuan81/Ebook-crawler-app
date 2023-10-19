@@ -10,9 +10,9 @@
 <body>
     <h2>電子書蟲</h2>
     <form id="form" >
-    <label for="output_path">檔案輸出位置:</label>
+    <label for="epub_path">檔案輸出位置:</label>
     <input type="text" id="output_path">
-    <label for="output_path">更新電子書檔案:</label>
+    <label for="input_path">更新電子書檔案:</label>
     <input type="text" id="input_path">
     <button type="submit">開始</button>
     </form>
@@ -27,14 +27,14 @@
         form.addEventListener('submit',startCrawling)
         
         async function startCrawling(e) {
-            const outputPath = document.getElementById('output_path').value;
+            const epubPath = document.getElementById('epub_path').value;
             const inputPath = document.getElementById('input_path').value;
             let action="get";
             if (inputPath) {
                 action="update";
             }
             document.getElementById('progress').style.display = 'block';
-            const data={action, outputPath, inputPath}
+            const data={"action": action, "epub_path": epubPath, "input_path": inputPath}
             await eel.start_crawl(data)();
         }
 
