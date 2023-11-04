@@ -3,6 +3,7 @@
 output/
 build/
 dist/*
+node_modules/*
 
 # Numerous always-ignore extensions
 *.epub

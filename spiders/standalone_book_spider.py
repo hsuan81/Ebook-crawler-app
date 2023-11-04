@@ -408,8 +408,6 @@ def main(params, callback=None):
     if action == "get":
         logger.info(" Action is: Get Ebook ")
         get_epub(book_url, epub_path, callback)
-        
-
         logger.info("Ebook creation process completed.")
 
     elif action == "update":
@@ -418,30 +416,6 @@ def main(params, callback=None):
 
         logger.info("Ebook update completed.")
 
-
-def test():
-    print("Start")
-    html = """
-    <html>
-    <head></head>
-    <body>
-    <div class="block">
-        <div class="block_img2"><img alt="上門龍婿" src="/files/article/image/118/118028/118028s.jpg" border="0" width="100" height="130"></div>
-        <div class="block_txt2">
-            <h2><a>上門龍婿</a></h2>
-            <p>作者：<a href="/zh_hant/author/葉辰/">葉辰</a></p>
-            <p>分類：<a href="/zh_hant/sort/3/">都市言情</a></p>
-            <p>狀態：連載中</p>
-            <p>更新：2023-09-15</p>
-            <p>最新：<a href="209265592.html">第2874章 送給公子的禮物</a></p>
-        </div>
-    </div>
-    </body>
-    </html>
-    """
-    soup = BeautifulSoup(html, 'lxml')
-    print("setup soup")
-    print(soup.select_one('p:-soup-contains("最新") a').text)
 
 
 if __name__ == '__main__':
