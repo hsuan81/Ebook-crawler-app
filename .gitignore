@@ -4,6 +4,8 @@ output/
 build/
 dist/*
 node_modules/*
+logs/*
+__pycache__/
 
 # Numerous always-ignore extensions
 *.epub
