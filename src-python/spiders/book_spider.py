@@ -325,6 +325,7 @@ def get_epub(book_url, epub_path, callback=None):
         callback("Ebook completed.")
 
     logger.info("Ebook creation process completed.")
+    print("Ebook creation completed.")
 
 
 def update_epub(book_url, epub_path, input_path, callback=None):
@@ -389,34 +390,35 @@ def update_epub(book_url, epub_path, input_path, callback=None):
         logger.info("EPUB file is updated.")
         if callback:
             callback("Update completed.")
+        print("Ebook update completed.")
 
     else:
         logger.info("EPUB file already up to date")
         if callback:
             callback("Ebook is already up to date.")
+        print("Ebook is already up to date.")
 
 
 
-def main(params, callback=None):
+def main(operation, args):
     # Get params
-    action = params.get("action")
-    epub_path = params.get("epub_path")
-    input_path = params.get("input_path")
-
+    # action = params.get("action")
+    # epub_path = params.get("epub_path")
+    # input_path = params.get("input_path")
     book_url = 'https://m.bqg9527.com/zh_hant/book/118028/'
 
-    if action == "get":
-        logger.info(" Action is: Get Ebook ")
-        get_epub(book_url, epub_path, callback)
-        
+    match operation:
+        case "get":
+            logger.info(" Action is: Get Ebook ")
+            get_epub(book_url, *args)
+            logger.info("Ebook creation process completed.")
 
-        logger.info("Ebook creation process completed.")
-
-    elif action == "update":
-        logger.info(" Action is: Update Ebook ")
-        update_epub(book_url, epub_path, input_path, callback)
-
-        logger.info("Ebook update completed.")
+        case "update":
+            logger.info(" Action is: Update Ebook ")
+            update_epub(book_url, *args)
+            logger.info("Ebook update completed.")
+        case _:
+            raise Exception(f"Unknown operation: {operation}")
 
 
 def test():

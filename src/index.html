@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>電子書蟲</title>
+    <script type="module" src="/main.js" defer></script>
+    <style>
+      .logo.vanilla:hover {
+        filter: drop-shadow(0 0 2em #ffe21c);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Ebook Crawler</h1>
+
+      <!-- <div class="row"> -->
+        <!-- <a href="https://tauri.app" target="_blank"> -->
+          <!-- <img src="/assets/tauri.svg" class="logo tauri" alt="Tauri logo" /> -->
+        <!-- </a> -->
+        <!-- <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+          target="_blank"
+        > -->
+          <!-- <img
+            src="/assets/javascript.svg"
+            class="logo vanilla"
+            alt="JavaScript logo"
+          /> -->
+        <!-- </a> -->
+      <!-- </div> -->
+
+      <form class="row" id="greet-form">
+        <!-- <input id="greet-input" placeholder="Enter a name..." />
+        <button type="submit">Greet</button> -->
+        <button id="folderPicker">選擇檔案輸出資料夾</button>
+        <p id="folderPath"></p>
+        <button id="filePicker" accept=".epub">選擇要更新的檔案(.epub)</button>
+        <p id="fileLocation">檔案位置: <span id="filePathDisplay"></span></p>
+    
+        <button id="getEpub" type="submit">建立電子書</button>
+        <button id="updateEpub" type="submit">更新電子書</button>
+      </form>
+
+      <div id="progress" style="display: none;">
+        進度: <span id="progress_message"></span>
+      </div>
+
+      <p id="greet-msg"></p>
+    </div>
+  </body>
+</html>
