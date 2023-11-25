@@ -33,21 +33,25 @@
         <!-- </a> -->
       <!-- </div> -->
 
-      <form class="row" id="greet-form">
+      <div class="row" id="crawler-form">
         <!-- <input id="greet-input" placeholder="Enter a name..." />
         <button type="submit">Greet</button> -->
-        <button id="folderPicker">選擇檔案輸出資料夾</button>
-        <p id="folderPath"></p>
-        <button id="filePicker" accept=".epub">選擇要更新的檔案(.epub)</button>
-        <p id="fileLocation">檔案位置: <span id="filePathDisplay"></span></p>
+        <button id="folderPicker" type="button">選擇檔案輸出資料夾</button>
+        <div id="folderPath"></div>
+        <button id="filePicker" type="button" accept=".epub" >選擇要更新的檔案(.epub)</button>
+        <div id="fileLocation"></div>
     
+        
+      </div>
+
+      <div class="column">
         <button id="getEpub" type="submit">建立電子書</button>
         <button id="updateEpub" type="submit">更新電子書</button>
-      </form>
-
-      <div id="progress" style="display: none;">
-        進度: <span id="progress_message"></span>
+        
       </div>
+      <div id="progress" class="hidden">
+        進度: <span id="progress_message"></span>
+        </div>
 
       <p id="greet-msg"></p>
     </div>

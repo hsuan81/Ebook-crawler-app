@@ -23,20 +23,37 @@
   text-align: center;
 }
 
-.logo {
+.hidden {
+  display: none;
+}
+
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: 0.75s;
-}
-
+} */
+/* 
 .logo.tauri:hover {
   filter: drop-shadow(0 0 2em #24c8db);
-}
+} */
 
 .row {
   display: flex;
   justify-content: center;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;    /* Center items horizontally */
+  gap: 10px;              /* Space between items */
+  padding: 20px;          /* Padding around the form */
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  flex-direction: row; /* Stack items vertically */
+  align-items: center;    /* Center items horizontally */
+  gap: 10px;              /* Space between items */
+  padding: 20px;          /* Padding around the form */
 }
 
 a {
@@ -84,9 +101,9 @@ button {
   outline: none;
 }
 
-#greet-input {
+/* #greet-input {
   margin-right: 5px;
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {

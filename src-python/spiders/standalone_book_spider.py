@@ -13,7 +13,7 @@ if not os.path.exists('logs'):
     os.makedirs('logs')
 logging.basicConfig(filename='logs/spider.log',
                     level=logging.INFO,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(funcName)s - Line %(lineno)d - %(message)s')
 logger = logging.getLogger(__name__)
 
 headers = {
@@ -424,4 +424,4 @@ if __name__ == '__main__':
         # test()
 
     except Exception as e:
-        logger.error(f"An error occurred: {e}")
+        logger.error(f"An error occurred: {e}", exc_info=True)

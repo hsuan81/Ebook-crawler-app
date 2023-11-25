@@ -18,6 +18,7 @@ class TestSpider(unittest.TestCase):
                       patch('spiders.book_spider.fetch_one_chapter_content'), MagicMock(return_value='<p>Helou, this is my book! There are many books, but this one is mine.</p>')]  # fixed value
         for mock in self.mocks:
             mock.start()
+    
     def test_get_epub_last_chap_title(self):
         """
         Test that it can get the last chapter title of ebook

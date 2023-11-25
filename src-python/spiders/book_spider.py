@@ -7,13 +7,14 @@ import sys
 from bs4 import BeautifulSoup
 from ebooklib import epub
 from ebooklib import ITEM_DOCUMENT, ITEM_NAVIGATION, ITEM_STYLE
+from diskcache import Deque, Index
 
 # Set up logging
 if not os.path.exists('logs'):
     os.makedirs('logs')
 logging.basicConfig(filename='logs/spider.log',
                     level=logging.INFO,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(funcName)s - Line %(lineno)d - %(message)s')
 logger = logging.getLogger(__name__)
 
 headers = {
@@ -41,13 +42,61 @@ def fetch_chapters_list(book_url):
 
     chapter_tags = soup.select(
         'ul.chapter[id!="last12"] > li > a[href!="#header"]')
-   
-    chapters = []
+    
+    results = Index('data/results')
+
     for tag in chapter_tags:
-        chapter_name = tag.text
         chapter_url = 'https://m.bqg9527.com' + tag['href']
-        chapters.append((chapter_name, chapter_url))
-    return chapters
+        chapter_name = tag.text
+        # print(chapter_name)
+        match = re.search(r"\d+", chapter_name)
+        if match:
+            chapter_number = int(match.group())
+            # print(chapter_number, chapter_number)
+
+        else:
+            continue
+        if chapter_number and chapter_number in results.keys():
+            # print("duplicate", chapter_name)
+            continue
+
+        # print("Adding chapter name...", chapter_url, chapter_name)
+
+        results[chapter_number] = (chapter_name, chapter_url)
+    logger.info(f"The number of chapters list from URL: {len(results)}")
+    for key in results.keys():
+        if key > int(len(results)):
+            # print("delete", key)
+            del results[key]
+    logger.info(f"The final number of chapters list from URL: {len(results)}")
+    # results.clear()
+
+    return len(results)
+    
+    # for tag in chapter_tags:
+    #     try:
+    #         url = urls.popleft()
+    #     except IndexError:
+    #         break
+        
+    #     chapter_url = 'https://m.bqg9527.com' + tag['href']
+    #     if chapter_url in results:
+    #         continue
+
+    #     chapter_name = tag.text
+
+    #     urls.append(chapter_url)
+
+    #     results[chapter_url] = chapter_name
+    # logger.info(f"The number of chapters list from URL: {len(results)}")
+
+    # chapters = []
+    # for tag in chapter_tags:
+    #     chapter_name = tag.text
+    #     chapter_url = 'https://m.bqg9527.com' + tag['href']
+    #     chapters.append((chapter_name, chapter_url))
+    # logger.info(f"The number of chapters list from URL: {len(chapters)}")
+    # return chapters
 
 
 def fetch_one_chapter_content(chapter_url):
@@ -128,34 +177,40 @@ def get_latest_chapter_from_web(book_url):
     latest_chapter = soup.select_one('p:-soup-contains("最新") a').text
     return latest_chapter
 
-def calculate_chapters_to_update(book_url, path):
+def chapters_to_update(book_url, path):
     last_title = get_last_chapter_title_epub(path)
-    latest_title = get_latest_chapter_from_web(book_url)
-    logger.info(f"Last chapter title of the Epub file: {last_title}")
-    logger.info(f"Latest chapter title from web: {latest_title}")
-    logger.info(f"The two titles are the same: {last_title == latest_title}")
-    logger.info(f"The two titles are different: {last_title != latest_title}")
-    if last_title != latest_title:
+    last_chapter_match = int(re.search(r'\d+', last_title).group(0))
+    number_of_chapter = fetch_chapters_list(book_url)
+    logger.info(f"Last chapter number of the Epub file: {last_chapter_match}")
+    logger.info(f"Latest chapter number from web: {number_of_chapter}")
+    # logger.info(f"The two titles are the same: {last_title == latest_title}")
+    # logger.info(f"The two titles are different: {last_title != latest_title}")
+    if last_chapter_match != number_of_chapter:
+        logger.info(
+                "Calculate chapters to update: New chapters found.")
+        return True, last_chapter_match
         
         # parse to get number and calculate how many chapters need to be added
-        last_chapter_match = re.search(r'\d+', last_title)
-        latest_chapter_match = re.search(r'\d+', latest_title)
-        logger.info(f"Last chapter match: {last_chapter_match}")
-        logger.info(f"Latest chapter match: {latest_chapter_match}")
-        if last_chapter_match and latest_chapter_match:
-            last_chapter_number = int(
-                last_chapter_match.group(0))  # 获取匹配到的数字字符串
-            latest_chapter_number = int(
-                latest_chapter_match.group(0))  # 将字符串转为整数
-            logger.info(f"chapter number: {last_chapter_number} vs {latest_chapter_number}")
-            diff = last_chapter_number-latest_chapter_number
-            logger.info(f"difference: {diff}")
-            return abs(diff)
-        else:
-            logger.info(
-                "Calculate chapters to update: No chapter number found.")
+        # last_chapter_match = re.search(r'\d+', last_title)
+        # latest_chapter_match = re.search(r'\d+', latest_title)
+        # logger.info(f"Last chapter match: {last_chapter_match}")
+        # logger.info(f"Latest chapter match: {latest_chapter_match}")
+        # if last_chapter_match and latest_chapter_match:
+        #     last_chapter_number = int(
+        #         last_chapter_match.group(0))  # 获取匹配到的数字字符串
+        #     latest_chapter_number = int(
+        #         latest_chapter_match.group(0))  # 将字符串转为整数
+        #     logger.info(f"chapter number: {last_chapter_number} vs {latest_chapter_number}")
+        #     diff = last_chapter_number-latest_chapter_number
+        #     logger.info(f"difference: {diff}")
+        #     return abs(diff)
+        # else:
+        #     logger.info(
+        #         "Calculate chapters to update: No chapter number found.")
     else:
-        return 0
+        logger.info(
+                "Calculate chapters to update: No new chapter found.")
+        return False, 0
     
 
 
@@ -274,8 +329,10 @@ def save_updated_epub(output_path, epub_chapters, book_info, book, book_counter)
 
 def get_epub(book_url, epub_path, callback=None):
     book_info = fetch_book_info(book_url)
-    chapters_info = fetch_chapters_list(book_url)
-    total_chapters = len(chapters_info)
+    # chapters_info = fetch_chapters_list(book_url)
+    total_chapters = fetch_chapters_list(book_url)
+    chapters_info = Index('data/results')
+    # total_chapters = len(chapters_info)
     chapters = []
     # # Testing
     # for n in range(10):
@@ -285,10 +342,16 @@ def get_epub(book_url, epub_path, callback=None):
     #     chapters.append((title, content))
 
     # # Production
-    for idx, (title, url) in enumerate(chapters_info):
+    # for idx, (title, url) in enumerate(chapters_info):
+    #     content = fetch_one_chapter_content(url)
+    #     chapters.append((title, content))
+    idx = 0
+    for key in sorted(chapters_info.keys()):
+        title, url = chapters_info[key]
+        # print(title, url)
         content = fetch_one_chapter_content(url)
         chapters.append((title, content))
-
+        idx += 1
         # Use callback function to update progress for display on the client side
         if callback:
             progress = ((idx + 1) / total_chapters) * 100  # calculate the Ebook complete percentage
@@ -318,32 +381,40 @@ def get_epub(book_url, epub_path, callback=None):
         book.add_item(c)
         epub_chapters.append(c)
         current_size += chapter_size
-    
+
+    chapters_info.clear()
     save_epub(epub_path, epub_chapters, book_info, book, book_count)
     
     if callback:
         callback("Ebook completed.")
 
     logger.info("Ebook creation process completed.")
-    print("Ebook creation completed.")
+    logger.info("Ebook creation completed.")
 
 
 def update_epub(book_url, epub_path, input_path, callback=None):
     if callback:
         callback("Checking new chapters...")
 
-    number_to_update = calculate_chapters_to_update(book_url, input_path)
-    logger.info(f"Number of chapters to update: {number_to_update}")
+    to_update, chapter_num = chapters_to_update(book_url, input_path)
+    logger.info(f"Number of chapters of epub: {chapter_num}")
 
     # Start to update the ebook if new chapters are available on the web
-    if number_to_update > 0:
+    if to_update > 0:
         if callback:
             callback("Fetching new chapters...")
 
-        chap_list = fetch_chapters_list(book_url)
+        # chap_list = fetch_chapters_list(book_url)
+        chap_list = Index('data/results')
+        # logger.info(f"First chapter in the list: {chap_list[0][0]}")
 
         # Slice the list with only new chapters left
-        chap_list_to_update = chap_list[-abs(number_to_update)::1]
+        # chap_list_to_update = chap_list[-abs(number_to_update)::1]
+        chap_list_to_update = [chap_list[key] for key in sorted(chap_list.keys()) if key > chapter_num]
+        # chap_list_to_update = [chap_list[key] for key in sorted(chap_list.keys())]
+
+        logger.info(f"Total number of chapters to update: {len(chap_list_to_update)}")
+        logger.info(f"First chapter to update: {chap_list_to_update[0]}")
 
         # Fetch title and content of the chapters for update
         chap_content_to_update = []
@@ -386,17 +457,18 @@ def update_epub(book_url, epub_path, input_path, callback=None):
                 current_size += chapter_size
                 # size within limit -> continue to append chapter
 
+        chap_list.clear()
         save_updated_epub(epub_path, epub_chapters, book_info, book, book_count)
         logger.info("EPUB file is updated.")
         if callback:
             callback("Update completed.")
-        print("Ebook update completed.")
+        logger.info("Ebook update completed.")
 
     else:
         logger.info("EPUB file already up to date")
         if callback:
             callback("Ebook is already up to date.")
-        print("Ebook is already up to date.")
+        logger.info("Ebook is already up to date.")
 
 
 
@@ -406,6 +478,7 @@ def main(operation, args):
     # epub_path = params.get("epub_path")
     # input_path = params.get("input_path")
     book_url = 'https://m.bqg9527.com/zh_hant/book/118028/'
+    logger.info(f"Operation: {operation}, Args: {args}")
 
     match operation:
         case "get":
@@ -452,4 +525,4 @@ if __name__ == '__main__':
         # test()
 
     except Exception as e:
-        logger.error(f"An error occurred: {e}")
+        logger.error(f"An error occurred: {e}", exc_info=True)
