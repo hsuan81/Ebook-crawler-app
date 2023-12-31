@@ -19,11 +19,11 @@ jobs:
           - os: macos-latest
             TARGET: macos
             CMD_BUILD: >
-                pyinstaller --clean --onefile -y -n "spider-aarch64-apple-darwin" -distpath /src-python/dist/ book_spider.py
+                pyinstaller --clean --onefile -y -n "spider-aarch64-apple-darwin" --distpath /src-python/dist/ book_spider.py
                 
           - os: windows-latest
             TARGET: windows
-            CMD_BUILD: pyinstaller --clean --onefile -y -n "spider-x86_64-pc-windows-msvc" -distpath /src-python/dist/ book_spider.py
+            CMD_BUILD: pyinstaller --clean --onefile -y -n "spider-x86_64-pc-windows-msvc" --distpath /src-python/dist/ book_spider.py
             ASSET_MIME: application/vnd.microsoft.portable-executable
 
     steps:
